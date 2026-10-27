@@ -1,0 +1,90 @@
+{
+  "title": "中昆仑燃气",
+  "config": {
+    "step": {
+      "user": {
+        "title": "连接中昆仑燃气",
+        "description": "填写燃气微信页面 URL 中的 openid，自动查找已绑定户号。",
+        "data": {
+          "openid": "微信 OpenID"
+        }
+      },
+      "select_user": {
+        "title": "选择燃气户号",
+        "data": {
+          "user_id": "户号"
+        }
+      },
+      "reconfigure": {
+        "title": "更新 OpenID",
+        "description": "新 OpenID 必须绑定当前燃气户号。",
+        "data": {
+          "openid": "微信 OpenID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法获取燃气数据，请稍后重试。",
+      "invalid_openid": "OpenID 格式不正确，请只填写 URL 中 openid 参数的值。",
+      "no_bindings": "没有找到绑定户号，请检查 OpenID 或先在公众号绑定。",
+      "user_not_bound": "此 OpenID 未绑定当前户号。"
+    },
+    "abort": {
+      "already_configured": "此燃气户号已添加。",
+      "no_meters": "该户号未查询到表具。",
+      "reconfigure_successful": "OpenID 已更新。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "燃气更新选项",
+        "data": {
+          "update_interval": "表具和用气数据刷新间隔（分钟，15–1440）",
+          "low_balance_threshold": "低余额提醒阈值（元）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "balance": {
+        "name": "余额"
+      },
+      "remaining_gas": {
+        "name": "剩余气量"
+      },
+      "meter_reading": {
+        "name": "累计表底"
+      },
+      "meter_status": {
+        "name": "表具状态"
+      },
+      "last_usage": {
+        "name": "最近一期用气量"
+      },
+      "last_fee": {
+        "name": "最近一期费用"
+      },
+      "last_reading_time": {
+        "name": "最近抄表时间"
+      },
+      "last_payment": {
+        "name": "最近缴费金额"
+      },
+      "last_payment_time": {
+        "name": "最近缴费时间"
+      }
+    },
+    "binary_sensor": {
+      "low_balance": {
+        "name": "余额不足"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "刷新数据"
+      }
+    }
+  }
+}

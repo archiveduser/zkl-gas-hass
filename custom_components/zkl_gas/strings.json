@@ -1,0 +1,90 @@
+{
+  "title": "Zhongkunlun Gas",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Zhongkunlun Gas",
+        "description": "Enter the openid value from the gas service WeChat page URL.",
+        "data": {
+          "openid": "WeChat OpenID"
+        }
+      },
+      "select_user": {
+        "title": "Select gas account",
+        "data": {
+          "user_id": "Account"
+        }
+      },
+      "reconfigure": {
+        "title": "Update OpenID",
+        "description": "The new OpenID must be bound to this gas account.",
+        "data": {
+          "openid": "WeChat OpenID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to fetch gas data. Try again later.",
+      "invalid_openid": "Enter a valid OpenID value from the page URL.",
+      "no_bindings": "No bound accounts found. Check the OpenID or bind an account in WeChat.",
+      "user_not_bound": "This OpenID is not bound to the configured account."
+    },
+    "abort": {
+      "already_configured": "This gas account is already configured.",
+      "no_meters": "No meters found for this account.",
+      "reconfigure_successful": "OpenID updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gas options",
+        "data": {
+          "update_interval": "Meter and usage update interval (minutes, 15–1440)",
+          "low_balance_threshold": "Low balance threshold (CNY)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "balance": {
+        "name": "Balance"
+      },
+      "remaining_gas": {
+        "name": "Remaining gas"
+      },
+      "meter_reading": {
+        "name": "Meter reading"
+      },
+      "meter_status": {
+        "name": "Meter status"
+      },
+      "last_usage": {
+        "name": "Latest period usage"
+      },
+      "last_fee": {
+        "name": "Latest period fee"
+      },
+      "last_reading_time": {
+        "name": "Last meter reading"
+      },
+      "last_payment": {
+        "name": "Last payment amount"
+      },
+      "last_payment_time": {
+        "name": "Last payment time"
+      }
+    },
+    "binary_sensor": {
+      "low_balance": {
+        "name": "Low balance"
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Refresh data"
+      }
+    }
+  }
+}
